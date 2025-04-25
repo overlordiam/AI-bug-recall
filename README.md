@@ -1,9 +1,9 @@
-# 🛠️ MCP Bug Resolver Tool – PRD
+# 🛠️ MCP Bug Resolver Tool - PRD
 
 ## 1. Overview
 
 This product is a **personal bug resolution assistant**, powered by a **local MCP server** that integrates directly with MCP-compatible IDEs (e.g., Cursor, Windsurf).  
-It allows developers to ask questions like _“How did I fix this error before?”_ and retrieves previous bug fixes using Git commit history, code context, and embeddings.
+It allows developers to ask questions like “How did I fix this error before?” and retrieves previous bug fixes using Git commit history, code context, and embeddings.
 
 ---
 
@@ -40,11 +40,16 @@ It allows developers to ask questions like _“How did I fix this error before?�
   - Bug fix notes  
 - Retrieves file path, diff, timestamp, and nearby code.  
 - Uses an LLM to generate a natural answer.
+- Hybrid search, combine vector search (semantic similarity) with keyword filters (e.g., error codes, stack traces).
 
 ### 4.3 Local Knowledge Graph
 - Built by indexing commit history and codebase.  
 - Updated on each commit (optional Git hook or watcher).  
 - Stores metadata for bug-related commits (e.g., “fix”, “bug”, “error”).
+
+### 4.4 Option to search through multiple repos (Optional)
+- Currently, it searches for the resolved bug under the current git repo only.
+- The above can be extended to multiple repos by prompting the user for a connection with github.
 
 ---
 
